@@ -209,7 +209,7 @@
     {
       "id": "A07",
       "zone": "zone-a",
-      "status": "away",
+      "status": "abandoned",
       "student": "std-004",
       "checkIn": "2026-06-13T14:45:09.524Z",
       "awayStart": "2026-06-13T15:37:09.524Z",
@@ -293,7 +293,7 @@
     {
       "id": "A14",
       "zone": "zone-a",
-      "status": "away",
+      "status": "abandoned",
       "student": "std-009",
       "checkIn": "2026-06-13T14:25:09.524Z",
       "awayStart": "2026-06-13T15:40:09.524Z",
@@ -773,7 +773,7 @@
     {
       "id": "C13",
       "zone": "zone-c",
-      "status": "away",
+      "status": "abandoned",
       "student": "std-009",
       "checkIn": "2026-06-13T14:15:09.525Z",
       "awayStart": "2026-06-13T15:38:09.525Z",
@@ -1136,6 +1136,30 @@
     }
   ],
   "activityFeed": [
+    {
+      "id": "act-1781366409715",
+      "time": "09:30 PM",
+      "desk": "A14",
+      "action": "Abandoned",
+      "student": "Karan Joshi",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781366289683",
+      "time": "09:28 PM",
+      "desk": "C13",
+      "action": "Abandoned",
+      "student": "Karan Joshi",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781366229688",
+      "time": "09:27 PM",
+      "desk": "A07",
+      "action": "Abandoned",
+      "student": "Sneha Nair",
+      "icon": "abandoned"
+    },
     {
       "id": "act-1781366169774",
       "time": "09:26 PM",

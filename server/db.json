@@ -1,0 +1,1260 @@
+{
+  "zones": [
+    {
+      "id": "zone-a",
+      "name": "Zone A",
+      "label": "Quiet Study",
+      "color": "#2563EB",
+      "description": "Silent zone for deep focus. No calls permitted.",
+      "features": [
+        "Charging Ports",
+        "Noise-Free",
+        "Individual Desks",
+        "Reading Lamps"
+      ],
+      "capacity": 20,
+      "floorLevel": 2
+    },
+    {
+      "id": "zone-b",
+      "name": "Zone B",
+      "label": "Collaboration Area",
+      "color": "#4F46E5",
+      "description": "Group study with whiteboards and collaborative tools.",
+      "features": [
+        "Whiteboards",
+        "Group Tables",
+        "Projector",
+        "Charging Ports"
+      ],
+      "capacity": 20,
+      "floorLevel": 1
+    },
+    {
+      "id": "zone-c",
+      "name": "Zone C",
+      "label": "Window Seats",
+      "color": "#0891B2",
+      "description": "Best natural light. Great views. Ideal for long sessions.",
+      "features": [
+        "Natural Light",
+        "Charging Ports",
+        "Window View",
+        "Ergonomic Chairs"
+      ],
+      "capacity": 20,
+      "floorLevel": 3
+    },
+    {
+      "id": "zone-d",
+      "name": "Zone D",
+      "label": "Tech Hub",
+      "color": "#7C3AED",
+      "description": "High-performance workstations with dual monitors and fast WiFi.",
+      "features": [
+        "Dual Monitors",
+        "High-Speed WiFi",
+        "Charging Ports",
+        "Standing Desks"
+      ],
+      "capacity": 20,
+      "floorLevel": 1
+    }
+  ],
+  "students": [
+    {
+      "id": "std-001",
+      "name": "Arjun Mehta",
+      "rollNo": "CS21B001",
+      "dept": "Computer Science",
+      "year": 3
+    },
+    {
+      "id": "std-002",
+      "name": "Priya Sharma",
+      "rollNo": "EC21B002",
+      "dept": "Electronics",
+      "year": 3
+    },
+    {
+      "id": "std-003",
+      "name": "Rahul Verma",
+      "rollNo": "ME21B003",
+      "dept": "Mechanical Eng.",
+      "year": 3
+    },
+    {
+      "id": "std-004",
+      "name": "Sneha Nair",
+      "rollNo": "CS22B004",
+      "dept": "Computer Science",
+      "year": 2
+    },
+    {
+      "id": "std-005",
+      "name": "Vikram Patel",
+      "rollNo": "CE21B005",
+      "dept": "Civil Engineering",
+      "year": 3
+    },
+    {
+      "id": "std-006",
+      "name": "Ananya Iyer",
+      "rollNo": "CS22B006",
+      "dept": "Computer Science",
+      "year": 2
+    },
+    {
+      "id": "std-007",
+      "name": "Rohan Das",
+      "rollNo": "EE21B007",
+      "dept": "Electrical Eng.",
+      "year": 3
+    },
+    {
+      "id": "std-008",
+      "name": "Divya Krishnan",
+      "rollNo": "CS21B008",
+      "dept": "Computer Science",
+      "year": 3
+    },
+    {
+      "id": "std-009",
+      "name": "Karan Joshi",
+      "rollNo": "MA22B009",
+      "dept": "Mathematics",
+      "year": 2
+    },
+    {
+      "id": "std-010",
+      "name": "Neha Gupta",
+      "rollNo": "PH21B010",
+      "dept": "Physics",
+      "year": 3
+    }
+  ],
+  "desks": [
+    {
+      "id": "A01",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A02",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-002",
+      "checkIn": "2026-06-13T15:00:09.515Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A03",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A04",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-003",
+      "checkIn": "2026-06-13T14:15:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A05",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A06",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-005",
+      "checkIn": "2026-06-13T15:15:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A07",
+      "zone": "zone-a",
+      "status": "away",
+      "student": "std-004",
+      "checkIn": "2026-06-13T14:45:09.524Z",
+      "awayStart": "2026-06-13T15:37:09.524Z",
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A08",
+      "zone": "zone-a",
+      "status": "abandoned",
+      "student": "std-008",
+      "checkIn": "2026-06-13T13:45:09.524Z",
+      "awayStart": "2026-06-13T15:33:09.524Z",
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A09",
+      "zone": "zone-a",
+      "status": "abandoned",
+      "student": "std-001",
+      "checkIn": "2026-06-13T13:15:09.524Z",
+      "awayStart": "2026-06-13T15:20:09.524Z",
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A10",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A11",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-005",
+      "checkIn": "2026-06-13T15:25:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A12",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A13",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-006",
+      "checkIn": "2026-06-13T14:50:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A14",
+      "zone": "zone-a",
+      "status": "away",
+      "student": "std-009",
+      "checkIn": "2026-06-13T14:25:09.524Z",
+      "awayStart": "2026-06-13T15:40:09.524Z",
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A15",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A16",
+      "zone": "zone-a",
+      "status": "abandoned",
+      "student": "std-007",
+      "checkIn": "2026-06-13T12:45:09.524Z",
+      "awayStart": "2026-06-13T15:15:09.524Z",
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A17",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A18",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-010",
+      "checkIn": "2026-06-13T15:30:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A19",
+      "zone": "zone-a",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "A20",
+      "zone": "zone-a",
+      "status": "occupied",
+      "student": "std-003",
+      "checkIn": "2026-06-13T15:10:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Charging",
+        "Lamp"
+      ]
+    },
+    {
+      "id": "B01",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-003",
+      "checkIn": "2026-06-13T14:35:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B02",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B03",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-010",
+      "checkIn": "2026-06-13T15:05:09.524Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B04",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B05",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-002",
+      "checkIn": "2026-06-13T14:10:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B06",
+      "zone": "zone-b",
+      "status": "abandoned",
+      "student": "std-006",
+      "checkIn": "2026-06-13T14:05:09.525Z",
+      "awayStart": "2026-06-13T15:30:09.525Z",
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B07",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B08",
+      "zone": "zone-b",
+      "status": "abandoned",
+      "student": "std-009",
+      "checkIn": "2026-06-13T13:55:09.525Z",
+      "awayStart": "2026-06-13T15:27:09.525Z",
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B09",
+      "zone": "zone-b",
+      "status": "abandoned",
+      "student": "std-008",
+      "checkIn": "2026-06-13T12:25:09.525Z",
+      "awayStart": "2026-06-13T15:10:09.525Z",
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B10",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B11",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-001",
+      "checkIn": "2026-06-13T15:20:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B12",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B13",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-007",
+      "checkIn": "2026-06-13T14:45:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B14",
+      "zone": "zone-b",
+      "status": "abandoned",
+      "student": "std-004",
+      "checkIn": "2026-06-13T13:35:09.525Z",
+      "awayStart": "2026-06-13T15:35:09.525Z",
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B15",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B16",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-005",
+      "checkIn": "2026-06-13T14:55:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B17",
+      "zone": "zone-b",
+      "status": "abandoned",
+      "student": "std-003",
+      "checkIn": "2026-06-13T13:05:09.525Z",
+      "awayStart": "2026-06-13T15:17:09.525Z",
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B18",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B19",
+      "zone": "zone-b",
+      "status": "occupied",
+      "student": "std-010",
+      "checkIn": "2026-06-13T14:30:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "B20",
+      "zone": "zone-b",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Whiteboard",
+        "Charging"
+      ]
+    },
+    {
+      "id": "C01",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C02",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-006",
+      "checkIn": "2026-06-13T14:55:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C03",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C04",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-007",
+      "checkIn": "2026-06-13T14:20:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C05",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C06",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-004",
+      "checkIn": "2026-06-13T15:15:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C07",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-001",
+      "checkIn": "2026-06-13T14:31:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C08",
+      "zone": "zone-c",
+      "status": "abandoned",
+      "student": "std-010",
+      "checkIn": "2026-06-13T13:45:09.525Z",
+      "awayStart": "2026-06-13T15:34:09.525Z",
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C09",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C10",
+      "zone": "zone-c",
+      "status": "abandoned",
+      "student": "std-002",
+      "checkIn": "2026-06-13T12:15:09.525Z",
+      "awayStart": "2026-06-13T15:05:09.525Z",
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C11",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C12",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-008",
+      "checkIn": "2026-06-13T15:00:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C13",
+      "zone": "zone-c",
+      "status": "away",
+      "student": "std-009",
+      "checkIn": "2026-06-13T14:15:09.525Z",
+      "awayStart": "2026-06-13T15:38:09.525Z",
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C14",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C15",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-007",
+      "checkIn": "2026-06-13T14:40:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C16",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C17",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-008",
+      "checkIn": "2026-06-13T14:05:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C18",
+      "zone": "zone-c",
+      "status": "abandoned",
+      "student": "std-005",
+      "checkIn": "2026-06-13T12:35:09.525Z",
+      "awayStart": "2026-06-13T15:07:09.525Z",
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C19",
+      "zone": "zone-c",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "C20",
+      "zone": "zone-c",
+      "status": "occupied",
+      "student": "std-001",
+      "checkIn": "2026-06-13T14:50:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Window",
+        "Charging",
+        "Ergonomic"
+      ]
+    },
+    {
+      "id": "D01",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D02",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-005",
+      "checkIn": "2026-06-13T14:45:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D03",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D04",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-008",
+      "checkIn": "2026-06-13T14:00:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D05",
+      "zone": "zone-d",
+      "status": "abandoned",
+      "student": "std-002",
+      "checkIn": "2026-06-13T14:25:09.525Z",
+      "awayStart": "2026-06-13T15:29:09.525Z",
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D06",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-008",
+      "checkIn": "2026-06-13T15:10:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D07",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D08",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D09",
+      "zone": "zone-d",
+      "status": "abandoned",
+      "student": "std-007",
+      "checkIn": "2026-06-13T11:45:09.525Z",
+      "awayStart": "2026-06-13T15:00:09.525Z",
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D10",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D11",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-006",
+      "checkIn": "2026-06-13T15:25:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D12",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D13",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-001",
+      "checkIn": "2026-06-13T14:30:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D14",
+      "zone": "zone-d",
+      "status": "abandoned",
+      "student": "std-004",
+      "checkIn": "2026-06-13T13:50:09.525Z",
+      "awayStart": "2026-06-13T15:36:09.525Z",
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D15",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D16",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-003",
+      "checkIn": "2026-06-13T14:17:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D17",
+      "zone": "zone-d",
+      "status": "abandoned",
+      "student": "std-009",
+      "checkIn": "2026-06-13T12:55:09.525Z",
+      "awayStart": "2026-06-13T15:12:09.525Z",
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D18",
+      "zone": "zone-d",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D19",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-005",
+      "checkIn": "2026-06-13T15:03:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    },
+    {
+      "id": "D20",
+      "zone": "zone-d",
+      "status": "occupied",
+      "student": "std-006",
+      "checkIn": "2026-06-13T14:37:09.525Z",
+      "awayStart": null,
+      "features": [
+        "Dual Monitor",
+        "High-Speed WiFi",
+        "Charging"
+      ]
+    }
+  ],
+  "activityFeed": [
+    {
+      "id": "act-1781366169774",
+      "time": "09:26 PM",
+      "desk": "D14",
+      "action": "Abandoned",
+      "student": "Sneha Nair",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781366109633",
+      "time": "09:25 PM",
+      "desk": "B14",
+      "action": "Abandoned",
+      "student": "Sneha Nair",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781366049613",
+      "time": "09:24 PM",
+      "desk": "C08",
+      "action": "Abandoned",
+      "student": "Neha Gupta",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781365989661",
+      "time": "09:23 PM",
+      "desk": "A08",
+      "action": "Abandoned",
+      "student": "Divya Krishnan",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781365809568",
+      "time": "09:20 PM",
+      "desk": "B06",
+      "action": "Abandoned",
+      "student": "Ananya Iyer",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781365749556",
+      "time": "09:19 PM",
+      "desk": "D05",
+      "action": "Abandoned",
+      "student": "Priya Sharma",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-1781365629538",
+      "time": "09:17 PM",
+      "desk": "B08",
+      "action": "Abandoned",
+      "student": "Karan Joshi",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-001",
+      "time": "05:35 PM",
+      "desk": "A02",
+      "action": "Occupied",
+      "student": "Priya Sharma",
+      "icon": "check-in"
+    },
+    {
+      "id": "act-002",
+      "time": "05:45 PM",
+      "desk": "B01",
+      "action": "Occupied",
+      "student": "Rahul Verma",
+      "icon": "check-in"
+    },
+    {
+      "id": "act-003",
+      "time": "05:55 PM",
+      "desk": "C06",
+      "action": "Occupied",
+      "student": "Sneha Nair",
+      "icon": "check-in"
+    },
+    {
+      "id": "act-004",
+      "time": "06:05 PM",
+      "desk": "A04",
+      "action": "Occupied",
+      "student": "Rahul Verma",
+      "icon": "check-in"
+    },
+    {
+      "id": "act-005",
+      "time": "06:15 PM",
+      "desk": "D02",
+      "action": "Occupied",
+      "student": "Vikram Patel",
+      "icon": "check-in"
+    },
+    {
+      "id": "act-006",
+      "time": "06:25 PM",
+      "desk": "A07",
+      "action": "Away",
+      "student": "Sneha Nair",
+      "icon": "away"
+    },
+    {
+      "id": "act-011",
+      "time": "06:50 PM",
+      "desk": "A09",
+      "action": "Abandoned",
+      "student": "Arjun Mehta",
+      "icon": "abandoned"
+    },
+    {
+      "id": "act-013",
+      "time": "07:00 PM",
+      "desk": "C10",
+      "action": "Released",
+      "student": "Priya Sharma",
+      "icon": "release"
+    }
+  ]
+}

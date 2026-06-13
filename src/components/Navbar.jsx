@@ -35,57 +35,61 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        initial={{ y: -80 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'glass shadow-lg' : 'bg-white/80 backdrop-blur-md'
+        initial={{ y: -100, x: '-50%' }}
+        animate={{ y: 0, x: '-50%' }}
+        transition={{ duration: 0.6, type: 'spring', stiffness: 120 }}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl rounded-2xl transition-all duration-300 ${
+          scrolled 
+            ? 'bg-white/85 backdrop-blur-md shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] border border-slate-200/50' 
+            : 'bg-white/95 backdrop-blur-md shadow-[0_4px_20px_0_rgba(0,0,0,0.04)] border border-slate-100'
         }`}
-        style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <NavLink to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-md">
-                <Zap size={16} color="white" fill="white" />
+            <NavLink to="/" className="flex items-center gap-3 group">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform duration-200">
+                <Zap size={18} color="white" fill="white" />
               </div>
-              <span className="font-bold text-lg gradient-text">SeatSync</span>
+              <span className="font-extrabold text-xl tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">SeatSync</span>
             </NavLink>
 
             {/* Desktop Links */}
-            <div className="hidden md:flex items-center gap-1">
-              {NAV_LINKS.map(({ to, label, icon: Icon }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    `flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
-                      isActive
-                        ? 'bg-blue-50 text-blue-700'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
-                    }`
-                  }
-                >
-                  <Icon size={15} />
-                  {label}
-                </NavLink>
-              ))}
+            <div className="hidden md:flex items-center gap-3">
+              {NAV_LINKS.map(({ to, label, icon: Icon }) => {
+                const isActiveLink = to === '/' 
+                  ? location.pathname === '/' 
+                  : location.pathname.startsWith(to);
+                return (
+                  <NavLink
+                    key={to}
+                    to={to}
+                    end={to === '/'}
+                    className={`relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold transition-all duration-200 border ${
+                      isActiveLink
+                        ? 'bg-blue-50/50 text-blue-700 border-blue-200 shadow-sm'
+                        : 'text-slate-600 border-slate-200/60 hover:text-slate-900 hover:border-slate-300 hover:bg-slate-50/50'
+                    }`}
+                  >
+                    <Icon size={16} className={isActiveLink ? 'text-blue-600' : 'text-slate-400'} />
+                    <span>{label}</span>
+                  </NavLink>
+                );
+              })}
             </div>
 
             {/* Live Badge */}
-            <div className="hidden md:flex items-center gap-3">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200">
+            <div className="hidden md:flex items-center gap-4">
+              <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-50 border border-slate-100">
                 <div className="relative w-2 h-2">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
                   <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75" />
                 </div>
-                <span className="text-xs font-semibold text-slate-700">
+                <span className="text-xs font-bold text-slate-700">
                   {occ}% Occupied
                 </span>
               </div>
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-sm">
+              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-blue-500/10 hover:scale-105 transition-transform duration-200">
                 AM
               </div>
             </div>

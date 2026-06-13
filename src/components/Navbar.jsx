@@ -35,16 +35,15 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        initial={{ y: -100, x: '-50%' }}
-        animate={{ y: 0, x: '-50%' }}
-        transition={{ duration: 0.6, type: 'spring', stiffness: 120 }}
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-7xl rounded-2xl transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white/85 backdrop-blur-md shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] border border-slate-200/50' 
-            : 'bg-white/95 backdrop-blur-md shadow-[0_4px_20px_0_rgba(0,0,0,0.04)] border border-slate-100'
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-white/80 backdrop-blur-md'
         }`}
+        style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}
       >
-        <div className="px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <NavLink to="/" className="flex items-center gap-3 group">

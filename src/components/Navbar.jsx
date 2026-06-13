@@ -3,9 +3,10 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Map, QrCode, Shield, BarChart3,
-  Zap, Menu, X, BookOpen
+  Zap, Menu, X, BookOpen, LogOut
 } from 'lucide-react';
 import { useApp } from '../store/useAppStore';
+import { useAuth } from '../store/useAuthStore';
 
 const NAV_LINKS = [
   { to: '/',           label: 'Home',       icon: BookOpen },
@@ -18,6 +19,7 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const { state } = useApp();
+  const { user, logout } = useAuth();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -77,8 +79,8 @@ export default function Navbar() {
               })}
             </div>
 
-            {/* Live Badge */}
-            <div className="hidden md:flex items-center gap-4">
+            {/* Live Badge + User */}
+            <div className="hidden md:flex items-center gap-3">
               <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-slate-50 border border-slate-100">
                 <div className="relative w-2 h-2">
                   <div className="w-2 h-2 rounded-full bg-green-500" />
@@ -88,9 +90,24 @@ export default function Navbar() {
                   {occ}% Occupied
                 </span>
               </div>
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-md shadow-blue-500/10 hover:scale-105 transition-transform duration-200">
-                AM
-              </div>
+              {user && (
+                <div className="flex items-center gap-2">
+                  {user.photoURL ? (
+                    <img src={user.photoURL} alt="avatar" className="w-9 h-9 rounded-full border-2 border-blue-200 shadow-sm object-cover" />
+                  ) : (
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xs font-bold shadow-md">
+                      {(user.displayName || user.phoneNumber || 'U')[0].toUpperCase()}
+                    </div>
+                  )}
+                  <button
+                    onClick={logout}
+                    title="Logout"
+                    className="w-8 h-8 flex items-center justify-center rounded-xl text-slate-400 hover:text-red-500 hover:bg-red-50 border border-slate-200 hover:border-red-200 transition-all duration-200"
+                  >
+                    <LogOut size={15} />
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Mobile toggle */}

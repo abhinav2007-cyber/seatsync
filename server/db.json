@@ -233,10 +233,10 @@
     {
       "id": "A09",
       "zone": "zone-a",
-      "status": "abandoned",
-      "student": "std-001",
-      "checkIn": "2026-06-13T13:15:09.524Z",
-      "awayStart": "2026-06-13T15:20:09.524Z",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
+      "awayStart": null,
       "features": [
         "Charging",
         "Lamp"
@@ -497,9 +497,9 @@
     {
       "id": "B11",
       "zone": "zone-b",
-      "status": "occupied",
-      "student": "std-001",
-      "checkIn": "2026-06-13T15:20:09.525Z",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
       "awayStart": null,
       "features": [
         "Whiteboard",
@@ -695,9 +695,9 @@
     {
       "id": "C07",
       "zone": "zone-c",
-      "status": "occupied",
-      "student": "std-001",
-      "checkIn": "2026-06-13T14:31:09.525Z",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
       "awayStart": null,
       "features": [
         "Window",
@@ -864,9 +864,9 @@
     {
       "id": "C20",
       "zone": "zone-c",
-      "status": "occupied",
-      "student": "std-001",
-      "checkIn": "2026-06-13T14:50:09.525Z",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
       "awayStart": null,
       "features": [
         "Window",
@@ -1033,9 +1033,9 @@
     {
       "id": "D13",
       "zone": "zone-d",
-      "status": "occupied",
-      "student": "std-001",
-      "checkIn": "2026-06-13T14:30:09.525Z",
+      "status": "available",
+      "student": null,
+      "checkIn": null,
       "awayStart": null,
       "features": [
         "Dual Monitor",
@@ -1136,6 +1136,70 @@
     }
   ],
   "activityFeed": [
+    {
+      "id": "act-1781373055987",
+      "time": "11:20 PM",
+      "desk": "D13",
+      "action": "Released",
+      "student": "Arjun Mehta",
+      "icon": "release"
+    },
+    {
+      "id": "act-1781373055212",
+      "time": "11:20 PM",
+      "desk": "C20",
+      "action": "Released",
+      "student": "Arjun Mehta",
+      "icon": "release"
+    },
+    {
+      "id": "act-1781373054137",
+      "time": "11:20 PM",
+      "desk": "C07",
+      "action": "Released",
+      "student": "Arjun Mehta",
+      "icon": "release"
+    },
+    {
+      "id": "act-1781373051785",
+      "time": "11:20 PM",
+      "desk": "B11",
+      "action": "Released",
+      "student": "Arjun Mehta",
+      "icon": "release"
+    },
+    {
+      "id": "act-1781373049657",
+      "time": "11:20 PM",
+      "desk": "B11",
+      "action": "Occupied",
+      "student": "Arjun Mehta",
+      "icon": "check-in"
+    },
+    {
+      "id": "act-1781373047302",
+      "time": "11:20 PM",
+      "desk": "B11",
+      "action": "Away",
+      "student": "Arjun Mehta",
+      "icon": "away"
+    },
+    {
+      "id": "act-1781373042787",
+      "time": "11:20 PM",
+      "desk": "A09",
+      "action": "Released",
+      "student": "Student",
+      "icon": "release"
+    },
+    {
+      "id": "act-1781373042751",
+      "time": "11:20 PM",
+      "desk": "A09",
+      "action": "Released",
+      "student": "Arjun Mehta",
+      "icon": "release"
+    },
     {
       "id": "act-1781366409715",
       "time": "09:30 PM",

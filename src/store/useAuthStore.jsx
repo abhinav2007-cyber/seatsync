@@ -14,7 +14,7 @@ const AuthContext = createContext(null);
 export function AuthProvider({ children }) {
   const [user, setUser]             = useState(null);
   const [loading, setLoading]       = useState(true);
-  const [phoneStep, setPhoneStep]   = useState('idle');
+  const [phoneStep, setPhoneStep]   = useState('idle'); // idle | sent | verifying
   const [confirmResult, setConfirm] = useState(null);
   const [authError, setAuthError]   = useState('');
 
@@ -37,54 +37,51 @@ export function AuthProvider({ children }) {
     }
   };
 
-  // ── Clear reCAPTCHA helper ───────────────────────────────────
-  const clearRecaptcha = () => {
+  // ── Helper: fresh reCAPTCHA verifier ────────────────────────
+  const getRecaptcha = async () => {
+    // Clear any stale instance first
     if (window.recaptchaVerifier) {
       try { window.recaptchaVerifier.clear(); } catch (_) {}
       window.recaptchaVerifier = null;
     }
-    // Reset the container HTML so Firebase can re-render
-    const el = document.getElementById('recaptcha-container');
-    if (el) el.innerHTML = '';
+    const verifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+      size: 'invisible',
+      callback: () => {},
+      'expired-callback': () => {
+        if (window.recaptchaVerifier) {
+          try { window.recaptchaVerifier.clear(); } catch (_) {}
+          window.recaptchaVerifier = null;
+        }
+      },
+    });
+    await verifier.render();
+    window.recaptchaVerifier = verifier;
+    return verifier;
   };
 
   // ── Phone: Send OTP ─────────────────────────────────────────
   const sendOTP = async (phoneNumber) => {
     setAuthError('');
-    clearRecaptcha(); // Always start fresh
-
     try {
-      const verifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-        size: 'invisible',
-        callback: () => {},
-        'expired-callback': () => {
-          clearRecaptcha();
-          setAuthError('reCAPTCHA expired. Please try again.');
-          setPhoneStep('idle');
-        },
-      });
-
-      await verifier.render(); // force render before use
-      window.recaptchaVerifier = verifier;
-
+      const verifier = await getRecaptcha();
       const result = await signInWithPhoneNumber(auth, phoneNumber, verifier);
       setConfirm(result);
       setPhoneStep('sent');
     } catch (e) {
-      console.error('Phone OTP error:', e);
-      clearRecaptcha();
-
-      // Show user-friendly error messages
-      if (e.code === 'auth/too-many-requests') {
-        setAuthError('Too many attempts. Please wait a few minutes and try again.');
-      } else if (e.code === 'auth/invalid-phone-number') {
-        setAuthError('Invalid phone number. Please enter a valid 10-digit Indian number.');
-      } else if (e.code === 'auth/operation-not-allowed') {
-        setAuthError('Phone sign-in is not enabled. Please contact support.');
-      } else if (e.code === 'auth/billing-not-enabled') {
-        setAuthError('SMS service requires Firebase Blaze plan. Please contact admin.');
-      } else {
-        setAuthError(e.message || 'Failed to send OTP. Please try again.');
+      console.error('Phone auth error:', e.code, e.message);
+      // Friendly error messages
+      const msgs = {
+        'auth/invalid-phone-number':    'Invalid phone number. Use 10-digit Indian number.',
+        'auth/too-many-requests':       'Too many attempts. Please wait a few minutes.',
+        'auth/operation-not-allowed':   'Phone auth is not enabled in Firebase Console.',
+        'auth/billing-not-enabled':     'Firebase billing not enabled for SMS.',
+        'auth/quota-exceeded':          'SMS quota exceeded. Try later.',
+        'auth/captcha-check-failed':    'reCAPTCHA failed. Please refresh and try again.',
+      };
+      setAuthError(msgs[e.code] || e.message || 'Failed to send OTP. Please try again.');
+      if (window.recaptchaVerifier) {
+        try { window.recaptchaVerifier.clear(); } catch (_) {}
+        window.recaptchaVerifier = null;
       }
     }
   };
@@ -95,16 +92,9 @@ export function AuthProvider({ children }) {
     setPhoneStep('verifying');
     try {
       await confirmResult.confirm(otp);
-      clearRecaptcha();
     } catch (e) {
-      console.error('OTP verify error:', e);
-      if (e.code === 'auth/code-expired') {
-        setAuthError('OTP has expired. Please request a new one.');
-        setPhoneStep('idle');
-      } else {
-        setAuthError('Invalid OTP. Please try again.');
-        setPhoneStep('sent');
-      }
+      setAuthError('Invalid OTP. Please try again.');
+      setPhoneStep('sent');
     }
   };
 
@@ -112,14 +102,16 @@ export function AuthProvider({ children }) {
     signOut(auth);
     setPhoneStep('idle');
     setConfirm(null);
-    clearRecaptcha();
   };
 
   const resetPhone = () => {
     setPhoneStep('idle');
     setConfirm(null);
     setAuthError('');
-    clearRecaptcha();
+    if (window.recaptchaVerifier) {
+      try { window.recaptchaVerifier.clear(); } catch (_) {}
+      window.recaptchaVerifier = null;
+    }
   };
 
   return (
@@ -130,8 +122,8 @@ export function AuthProvider({ children }) {
       phoneStep, authError,
       logout,
     }}>
-      {/* Invisible reCAPTCHA mount point — must stay in DOM */}
-      <div id="recaptcha-container" style={{ position: 'fixed', bottom: 0, zIndex: -1 }} />
+      {/* Invisible reCAPTCHA anchor — must stay in DOM at all times */}
+      <div id="recaptcha-container" />
       {children}
     </AuthContext.Provider>
   );

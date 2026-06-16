@@ -70,13 +70,13 @@ export default function Login() {
     <div className="min-h-screen flex bg-[#0A0F1E] overflow-hidden">
 
       {/* ── LEFT PANEL ───────────────────────────────────────── */}
-      <div className="hidden lg:flex flex-col justify-between w-[52%] relative overflow-hidden p-14">
+      <div className="hidden lg:flex flex-col justify-between w-[52%] relative overflow-hidden px-20 py-12">
 
         {/* Animated gradient orbs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-blue-600/20 blur-[120px] animate-pulse" />
-          <div className="absolute bottom-[-15%] right-[-10%] w-[500px] h-[500px] rounded-full bg-indigo-500/15 blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-[40%] left-[30%] w-[300px] h-[300px] rounded-full bg-cyan-500/10 blur-[80px] animate-pulse" style={{ animationDelay: '2s' }} />
+          <div className="absolute top-[-10%] left-[10%] w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-[120px] animate-pulse" />
+          <div className="absolute bottom-[-10%] right-[5%] w-[400px] h-[400px] rounded-full bg-indigo-500/15 blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-[40%] left-[40%] w-[250px] h-[250px] rounded-full bg-cyan-500/10 blur-[80px] animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
 
         {/* Grid overlay */}
@@ -92,46 +92,46 @@ export default function Login() {
 
         {/* Hero text */}
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="relative z-10 my-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold mb-5">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
             Smart Library Platform
           </div>
-          <h1 className="text-5xl xl:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6">
-            Never lose <br />
+          <h1 className="text-4xl xl:text-5xl font-black text-white leading-[1.15] tracking-tight mb-5">
+            Never lose{' '}
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
               your seat
             </span>
-            <br />again.
+            {' '}again.
           </h1>
-          <p className="text-slate-400 text-lg leading-relaxed max-w-md">
+          <p className="text-slate-400 text-base leading-relaxed max-w-sm">
             Real-time occupancy tracking, smart anti-hoarding, and QR-based check-in — all in one platform built for modern libraries.
           </p>
 
           {/* Feature list */}
-          <div className="mt-10 grid grid-cols-2 gap-4">
+          <div className="mt-8 grid grid-cols-2 gap-3">
             {FEATURES.map(({ icon: Icon, title, desc }, i) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="group p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.06] hover:border-blue-500/20 transition-all duration-300"
+                className="group p-4 rounded-2xl bg-white/[0.04] border border-white/[0.07] hover:bg-white/[0.07] hover:border-blue-500/25 transition-all duration-300"
               >
                 <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center mb-3 group-hover:bg-blue-500/20 transition-colors">
-                  <Icon size={16} className="text-blue-400" />
+                  <Icon size={15} className="text-blue-400" />
                 </div>
-                <p className="text-white text-sm font-semibold mb-1">{title}</p>
-                <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
+                <p className="text-white text-xs font-bold mb-1 leading-snug">{title}</p>
+                <p className="text-slate-500 text-[11px] leading-relaxed">{desc}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
         {/* Bottom stats */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="flex items-center gap-8 relative z-10">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="flex items-center gap-10 relative z-10">
           {[['500+', 'Seats Tracked'], ['98%', 'Uptime'], ['<3s', 'Check-in']].map(([val, lbl]) => (
             <div key={lbl}>
-              <p className="text-white text-2xl font-black">{val}</p>
+              <p className="text-white text-xl font-black">{val}</p>
               <p className="text-slate-500 text-xs mt-0.5">{lbl}</p>
             </div>
           ))}
